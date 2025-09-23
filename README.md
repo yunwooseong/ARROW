@@ -11,7 +11,7 @@ MovieLens-1M :  https://grouplens.org/datasets/movielens/
 Amazon-Books : https://cseweb.ucsd.edu/~jmcauley/datasets.html#amazon_reviews
 
 ### Data pre-processing
-The data pre-processing is based on CoLLM. To construct context+ as proposed in ARROW, genre is used for ML-1M, and category is used for Amazon-Book.
+The data pre-processing is based on CoLLM.
 
 ## 2. ARROW example command
 
