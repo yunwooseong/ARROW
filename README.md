@@ -16,7 +16,6 @@ The data pre-processing is based on CoLLM.
 ## 2. ARROW example command
 
 ### Step 1. Setting Up the Environment and Preparing Vicuna, Pretrained CF Model.
----
 ### Step 2. Performing ARROW in the 1st Stage.
 ```
 CUDA_VISIBLE_DEVICES=0,1 WORLD_SIZE=2 nohup torchrun --nproc-per-node 2 --master_port=11139 train_collm_mf_din.py  --cfg-path=train_configs/collm_pretrain_mf_ood_stage_1.yaml > /log_result.log &
