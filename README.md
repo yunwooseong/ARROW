@@ -13,7 +13,7 @@ Amazon-Books : https://cseweb.ucsd.edu/~jmcauley/datasets.html#amazon_reviews
 ### Data pre-processing
 The data pre-processing is based on CoLLM. To construct context+ as proposed in ARROW, genre is used for ML-1M, and category is used for Amazon-Book.
 
-## 2. DECORec example command
+## 2. ARROW example command
 
 ### Step 1. Setting Up the Environment and Preparing Vicuna, Pretrained CF Model, and the Trained CoLLM by Following CoLLM.
 ---
