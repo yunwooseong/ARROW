@@ -1,4 +1,4 @@
-# [WSDM' 26] ARROW: Adaptive Reasoning for LLM-based Recommendation with Explainability
+# [WSDM'26] ARROW: Adaptive Reasoning for LLM-based Recommendation with Explainability
 
 **This repository is built on [CoLLM](https://github.com/zyang1580/CoLLM). Please refer to CoLLM's "readme.md" for an overview of the code structure.**
 
