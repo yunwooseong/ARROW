@@ -70,17 +70,106 @@ CUDA_VISIBLE_DEVICES=0,1 WORLD_SIZE=2 torchrun --nproc-per-node 2 --master_port=
 
 Bold marks the best result and underline the second best (Table 2 of the paper). All improvements are statistically significant (paired t-test, p ≤ 0.05).
 
-| Method | ML-1M<br>AUC | ML-1M<br>UAUC | ML-1M<br>NDCG | Amazon-Book<br>AUC | Amazon-Book<br>UAUC | Amazon-Book<br>NDCG |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| MF | 0.6482 | 0.6361 | 0.8447 | 0.7119 | 0.5554 | 0.8194 |
-| SASRec | 0.7055 | 0.6885 | 0.8612 | 0.6829 | 0.5800 | 0.8244 |
-| ICL | 0.5320 | 0.5268 | 0.8102 | 0.4820 | 0.4856 | 0.7917 |
-| Prompt4NR | 0.7071 | 0.6739 | 0.8541 | 0.7224 | 0.5881 | 0.8346 |
-| TALLRec | 0.7072 | 0.6743 | 0.8578 | 0.7209 | 0.5814 | 0.8361 |
-| CoLLM (MF) | 0.7295 | 0.6798 | 0.8658 | 0.8107 | 0.6029 | 0.8557 |
-| BinLLM | <u>0.7412</u> | 0.6951 | <u>0.8747</u> | <u>0.8186</u> | <u>0.6338</u> | <u>0.8580</u> |
-| CoRA | 0.7410 | <u>0.7061</u> | 0.8728 | 0.8109 | 0.5975 | 0.8413 |
-| **ARROW** | **0.7577** | **0.7146** | **0.8792** | **0.8198** | **0.6576** | **0.8653** |
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2" align="left">Method</th>
+      <th colspan="3" align="center">ML-1M</th>
+      <th colspan="3" align="center">Amazon-Book</th>
+    </tr>
+    <tr>
+      <th align="center">AUC</th>
+      <th align="center">UAUC</th>
+      <th align="center">NDCG</th>
+      <th align="center">AUC</th>
+      <th align="center">UAUC</th>
+      <th align="center">NDCG</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="left">MF</td>
+      <td align="center">0.6482</td>
+      <td align="center">0.6361</td>
+      <td align="center">0.8447</td>
+      <td align="center">0.7119</td>
+      <td align="center">0.5554</td>
+      <td align="center">0.8194</td>
+    </tr>
+    <tr>
+      <td align="left">SASRec</td>
+      <td align="center">0.7055</td>
+      <td align="center">0.6885</td>
+      <td align="center">0.8612</td>
+      <td align="center">0.6829</td>
+      <td align="center">0.5800</td>
+      <td align="center">0.8244</td>
+    </tr>
+    <tr>
+      <td align="left">ICL</td>
+      <td align="center">0.5320</td>
+      <td align="center">0.5268</td>
+      <td align="center">0.8102</td>
+      <td align="center">0.4820</td>
+      <td align="center">0.4856</td>
+      <td align="center">0.7917</td>
+    </tr>
+    <tr>
+      <td align="left">Prompt4NR</td>
+      <td align="center">0.7071</td>
+      <td align="center">0.6739</td>
+      <td align="center">0.8541</td>
+      <td align="center">0.7224</td>
+      <td align="center">0.5881</td>
+      <td align="center">0.8346</td>
+    </tr>
+    <tr>
+      <td align="left">TALLRec</td>
+      <td align="center">0.7072</td>
+      <td align="center">0.6743</td>
+      <td align="center">0.8578</td>
+      <td align="center">0.7209</td>
+      <td align="center">0.5814</td>
+      <td align="center">0.8361</td>
+    </tr>
+    <tr>
+      <td align="left">CoLLM (MF)</td>
+      <td align="center">0.7295</td>
+      <td align="center">0.6798</td>
+      <td align="center">0.8658</td>
+      <td align="center">0.8107</td>
+      <td align="center">0.6029</td>
+      <td align="center">0.8557</td>
+    </tr>
+    <tr>
+      <td align="left">BinLLM</td>
+      <td align="center"><ins>0.7412</ins></td>
+      <td align="center">0.6951</td>
+      <td align="center"><ins>0.8747</ins></td>
+      <td align="center"><ins>0.8186</ins></td>
+      <td align="center"><ins>0.6338</ins></td>
+      <td align="center"><ins>0.8580</ins></td>
+    </tr>
+    <tr>
+      <td align="left">CoRA</td>
+      <td align="center">0.7410</td>
+      <td align="center"><ins>0.7061</ins></td>
+      <td align="center">0.8728</td>
+      <td align="center">0.8109</td>
+      <td align="center">0.5975</td>
+      <td align="center">0.8413</td>
+    </tr>
+    <tr>
+      <td align="left"><b>ARROW</b></td>
+      <td align="center"><b>0.7577</b></td>
+      <td align="center"><b>0.7146</b></td>
+      <td align="center"><b>0.8792</b></td>
+      <td align="center"><b>0.8198</b></td>
+      <td align="center"><b>0.6576</b></td>
+      <td align="center"><b>0.8653</b></td>
+    </tr>
+  </tbody>
+</table>
 
 ## Citation
 
